@@ -21,6 +21,27 @@ const questions = [
   },
 ];
 
+const scrap_questions=[
+  "What is DBMS and what is its utility? Explain RDBMS with examples.",
+  "What is a Database?",
+  "Mention the issues with traditional file-based systems that make DBMS a better choice?",
+  "Explain a few advantages of a DBMS.",
+  "Explain different languages present in DBMS.",
+  "What is meant by ACID properties in DBMS?",
+  "Are NULL values in a database the same as that of blank space or zero? ",
+  "What is Data Warehousing?",
+  "Explain different levels of data abstraction in a DBMS.",
+  "What is meant by an entity-relationship (E-R) model? Explain the terms Entity, Entity Type, and Entity Set in DBMS.",
+  "Explain different types of relationships amongst tables in a DBMS.",
+  "Explain the difference between intension and extension in a database.",
+  "Explain the difference between the DELETE and TRUNCATE command in a DBMS.",
+  "What is a lock. Explain the major difference between a shared lock and an exclusive lock during a transaction in a database.",
+  "What is meant by normalization and denormalization?",
+  "Explain different types of Normalization forms in a DBMS.",
+  "Explain different types of keys in a database.",
+  "Explain the difference between a 2-tier and 3-tier architecture in a DBMS."
+]
+
 const interviewers = [
   {
     id: "John",
@@ -191,12 +212,13 @@ export default function DemoPage() {
       const formData = new FormData();
       formData.append("file", output, `${unique_id}.mp3`);
       formData.append("model", "whisper-1");
-
+      const randomIndex = Math.floor(Math.random() * questions.length);
+      const randomQuestion = questions[randomIndex];
       const question =
         selected.name === "Behavioral"
           ? `Tell me about yourself. Why don${`’`}t you walk me through your resume?`
           : selectedInterviewer.name === "John"
-          ? "What is a Hash Table, and what is the average case and worst case time for each of its operations?"
+          ? randomQuestion
           : selectedInterviewer.name === "Richard"
           ? "Uber is looking to expand its product line. Talk me through how you would approach this problem."
           : "You have a 3-gallon jug and 5-gallon jug, how do you measure out exactly 4 gallons?";
@@ -510,7 +532,7 @@ export default function DemoPage() {
                           {new Date(seconds * 1000).toISOString().slice(14, 19)}
                         </span>
                       </div>
-                      {isVisible && ( // If the video is visible (on screen) we show it
+                      {/* {isVisible && ( // If the video is visible (on screen) we show it
                         <div className="block absolute top-[10px] sm:top-[20px] lg:top-[40px] left-auto right-[10px] sm:right-[20px] md:right-10 h-[80px] sm:h-[140px] md:h-[180px] aspect-video rounded z-20">
                           <div className="h-full w-full aspect-video rounded md:rounded-lg lg:rounded-xl">
                             <video
@@ -545,7 +567,7 @@ export default function DemoPage() {
                             </video>
                           </div>
                         </div>
-                      )}
+                      )} */} 
                       <Webcam
                         mirrored
                         audio
