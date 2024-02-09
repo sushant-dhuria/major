@@ -73,7 +73,8 @@ const ffmpeg = createFFmpeg({
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
-
+const randomIndex = Math.floor(Math.random() * scrap_questions.length);
+const randomQuestion = scrap_questions[randomIndex];
 export default function DemoPage() {
   const [selected, setSelected] = useState(questions[0]);
   const [selectedInterviewer, setSelectedInterviewer] = useState(
@@ -212,8 +213,6 @@ export default function DemoPage() {
       const formData = new FormData();
       formData.append("file", output, `${unique_id}.mp3`);
       formData.append("model", "whisper-1");
-      const randomIndex = Math.floor(Math.random() * scrap_questions.length);
-      const randomQuestion = scrap_questions[randomIndex];
       const question =
         selected.name === "Behavioral"
           ? `Tell me about yourself. Why don${`’`}t you walk me through your resume?`
