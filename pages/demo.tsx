@@ -482,13 +482,13 @@ export default function DemoPage() {
               {recordingPermission ? (
                 <div className="w-full flex flex-col max-w-[1080px] mx-auto justify-center">
                   <h2 className="text-2xl font-semibold text-left text-[#1D2B3A] mb-2">
-                    {selected.name === "Behavioral"
-                      ? `Tell me about yourself. Why don${`’`}t you walk me through your resume?`
-                      : selectedInterviewer.name === "John"
-                      ? "What is a Hash Table, and what is the average case and worst case time for each of its operations?"
-                      : selectedInterviewer.name === "Richard"
-                      ? "Uber is looking to expand its product line. Talk me through how you would approach this problem."
-                      : "You have a 3-gallon jug and 5-gallon jug, how do you measure out exactly 4 gallons?"}
+                 { selected.name === "Behavioral"
+          ? `Tell me about yourself. Why don${`’`}t you walk me through your resume?`
+          : selectedInterviewer.name === "John"
+          ? randomQuestion
+          : selectedInterviewer.name === "Richard"
+          ? "Uber is looking to expand its product line. Talk me through how you would approach this problem."
+          : "You have a 3-gallon jug and 5-gallon jug, how do you measure out exactly 4 gallons?"}
                   </h2>
                   <span className="text-[14px] leading-[20px] text-[#1a2b3b] font-normal mb-4">
                     Asked by top companies like Google, Facebook and more
@@ -1677,13 +1677,13 @@ export default function DemoPage() {
                       key={selected.id}
                       className="text-[#1a2b3b] text-[14px] leading-[18px] font-semibold absolute"
                     >
-                      {selected.name === "Behavioral"
-                        ? "Tell me about yourself"
-                        : selectedInterviewer.name === "John"
-                        ? "What is a Hash Table, and what is the average case for each of its operations?"
-                        : selectedInterviewer.name === "Richard"
-                        ? "Uber is looking to expand its product line. How would you go about doing this?"
-                        : "You have a 3-gallon jug and 5-gallon jug, how do you measure out exactly 4 gallons?"}
+                      {        selected.name === "Behavioral"
+          ? `Tell me about yourself. Why don${`’`}t you walk me through your resume?`
+          : selectedInterviewer.name === "John"
+          ? randomQuestion
+          : selectedInterviewer.name === "Richard"
+          ? "Uber is looking to expand its product line. Talk me through how you would approach this problem."
+          : "You have a 3-gallon jug and 5-gallon jug, how do you measure out exactly 4 gallons?";}
                     </motion.span>
 
                     <ul className="mt-[28px] flex">
