@@ -545,6 +545,7 @@ export default function DemoPage() {
                               playsInline
                               className="h-full object-cover w-full rounded-md md:rounded-[12px] aspect-video"
                               crossOrigin="anonymous"
+                              muted
                             >
                               <source
                                 src={
