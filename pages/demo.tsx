@@ -42,7 +42,7 @@ const interviewers = [
   },
 ];
 
-const dbms=[
+const dbms = [
   "What is DBMS and what is its utility? Explain RDBMS with examples.",
   "What is a Database?",
   "Mention the issues with traditional file-based systems that make DBMS a better choice?",
@@ -60,8 +60,8 @@ const dbms=[
   "What is meant by normalization and denormalization?",
   "Explain different types of Normalization forms in a DBMS.",
   "Explain different types of keys in a database.",
-  "Explain the difference between a 2-tier and 3-tier architecture in a DBMS."
-]
+  "Explain the difference between a 2-tier and 3-tier architecture in a DBMS.",
+];
 
 const randomIndex = Math.floor(Math.random() * dbms.length);
 const dbmsQuestion = dbms[randomIndex];
@@ -413,7 +413,7 @@ export default function DemoPage() {
                     as you leave the page.
                   </p>
                 </div>
-                <Link
+                {/* <Link
                   href="https://github.com/Tameyer41/liftoff"
                   target="_blank"
                   className="group rounded-full pl-[8px] min-w-[180px] pr-4 py-2 text-[13px] font-semibold transition-all flex items-center justify-center bg-[#1E2B3A] text-white hover:[linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), #0D2247] no-underline flex gap-x-2  active:scale-95 scale-100 duration-75"
@@ -445,7 +445,7 @@ export default function DemoPage() {
                     </svg>
                   </span>
                   Star on Github
-                </Link>
+                </Link> */}
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
